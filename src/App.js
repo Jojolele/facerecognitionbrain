@@ -69,7 +69,6 @@ class App extends Component {
   };
 
   displayFaceBox = (box) => {
-    console.log(box);
     this.setState({ box: box });
   };
 
@@ -79,7 +78,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({ imageUrl: this.state.input });
-    fetch("https://morning-meadow-99265.herokuapp.com//imageurl", {
+    fetch("https://morning-meadow-99265.herokuapp.com/imageurl", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
@@ -93,7 +92,7 @@ class App extends Component {
       })
       .then((response) => {
         if (response) {
-          fetch("https://morning-meadow-99265.herokuapp.com:3000/image", {
+          fetch("https://morning-meadow-99265.herokuapp.com/image", {
             method: "put",
             headers: {
               "Content-Type": "application/json",
